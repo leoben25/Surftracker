@@ -1,6 +1,6 @@
 package com.surftracker.repository;
 
-import com.surftracker.entities.Notificacion;
+import com.surftracker.entity.Notificacion;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

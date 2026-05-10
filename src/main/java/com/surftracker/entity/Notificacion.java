@@ -1,4 +1,4 @@
-package com.surftracker.entities;
+package com.surftracker.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
