@@ -5,6 +5,14 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UsuarioHasRolService {
-    public List<UsuarioHasRol> listarUsuarioHasRoles();
-    public Optional<UsuarioHasRol> obtenerUsuarioHasRolPorId(Integer id);
+
+    List<UsuarioHasRol> listarTodos();
+
+    Optional<UsuarioHasRol> obtenerPorId(Integer id);
+
+    List<UsuarioHasRol> listarPorUsuario(Integer idUsuario);
+
+    UsuarioHasRol guardar(UsuarioHasRol usuarioHasRol);
+
+    void eliminar(Integer id);
 }

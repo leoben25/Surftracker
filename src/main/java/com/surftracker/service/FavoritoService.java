@@ -42,7 +42,7 @@ public class FavoritoService {
     }
 
     public List<Favorito> listarPorLocalizacion(Integer idLocalizacion) {
-        return favoritoRepository.findByLocalizacionIdLocalizacion(idLocalizacion);
+        return favoritoRepository.findByLocalizacion_Id(idLocalizacion);
     }
 
     public Favorito guardar(Integer idUsuario, Integer idLocalizacion) {

@@ -1,17 +1,18 @@
 package com.surftracker.service;
 
-import com.surftracker.entity.Opcion;
 import com.surftracker.entity.RolHasOpcion;
 import java.util.List;
 import java.util.Optional;
 
 public interface RolHasOpcionService {
 
-    public List<RolHasOpcion> listarTodos();
+    List<RolHasOpcion> listarTodos();
 
-    public Optional<RolHasOpcion> obtenerPorId(Integer id);
+    Optional<RolHasOpcion> obtenerPorId(Integer id);
 
-    public Opcion guardarOpcion(Opcion opcion);
+    List<RolHasOpcion> listarPorRol(Integer idRol);
 
-    public void eliminarOpcion(Integer id);
+    RolHasOpcion guardar(RolHasOpcion rolHasOpcion);
+
+    void eliminar(Integer id);
 }

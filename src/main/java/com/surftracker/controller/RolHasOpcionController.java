@@ -23,7 +23,9 @@ public class RolHasOpcionController {
 
     @GetMapping("/{id}")
     public ResponseEntity<RolHasOpcion> obtenerPorId(@PathVariable Integer id) {
-        return service.obtenerPorId(id);
+        return service.obtenerPorId(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
 
     }
 

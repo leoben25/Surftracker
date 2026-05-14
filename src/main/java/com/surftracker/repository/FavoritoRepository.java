@@ -9,5 +9,5 @@ public interface FavoritoRepository extends JpaRepository<Favorito, Integer> {
 
     List<Favorito> findByUsuarioIdUsuario(Integer idUsuario);
 
-    List<Favorito> findByLocalizacionIdLocalizacion(Integer idLocalizacion);
+    List<Favorito> findByLocalizacion_Id(Integer idLocalizacion);
 }

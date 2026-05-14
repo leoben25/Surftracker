@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface RolHasOpcionRepository extends JpaRepository<RolHasOpcion, Integer> {
 
-    List<RolHasOpcion> findByRolIdRol(Integer idRol);
+    List<RolHasOpcion> findByRol_IdRol(Integer idRol);
 
     List<RolHasOpcion> findByOpcionIdOpcion(Integer idOpcion);
 }
