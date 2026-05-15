@@ -42,12 +42,10 @@ public class FeedbackController {
         return feedbackService.listarPorCalificacion(calificacion);
     }
 
-    @PostMapping
-    public Feedback guardar(
-            @RequestParam Integer idUsuario,
-            @RequestParam(required = false) Integer idPronostico,
-            @RequestBody Feedback feedback
-    ) {
+    @PostMapping("/guardarFeedback")
+    public Feedback guardar(@RequestBody Feedback feedback) {
+        Integer idUsuario = feedback.getUsuario().getIdUsuario();
+        Integer idPronostico = feedback.getPronostico() != null ? feedback.getPronostico().getIdPronostico() : null;
         return feedbackService.guardar(idUsuario, idPronostico, feedback);
     }
 

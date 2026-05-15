@@ -10,7 +10,8 @@ import java.util.List;
 
 @RestController
 
-@RequestMapping("/localizacion")
+@RequestMapping("/api/localizaciones")
+@CrossOrigin(origins = "*")
 
 public class LocalizacionController {
 
@@ -19,7 +20,7 @@ public class LocalizacionController {
 
 
 
-    @PostMapping
+    @PostMapping("registrarLocalizacion")
     public Localizacion registrar(
             @RequestBody Localizacion localizacion){
 
@@ -29,7 +30,7 @@ public class LocalizacionController {
 
 
 
-    @GetMapping
+    @GetMapping("/listaTodos")
     public List<Localizacion> listar(){
 
         return service.listar();
@@ -48,7 +49,7 @@ public class LocalizacionController {
 
 
 
-    @PutMapping
+    @PutMapping("actualizarLocalizacion")
     public Localizacion actualizar(
             @RequestBody Localizacion localizacion){
 
@@ -58,7 +59,7 @@ public class LocalizacionController {
 
 
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminarLocalizacion/{id}")
     public void eliminar(
             @PathVariable Integer id){
 

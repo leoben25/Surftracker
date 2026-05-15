@@ -37,15 +37,12 @@ public class FavoritoController {
         return favoritoService.listarPorLocalizacion(idLocalizacion);
     }
 
-    @PostMapping
-    public Favorito guardar(
-            @RequestParam Integer idUsuario,
-            @RequestParam Integer idLocalizacion
-    ) {
-        return favoritoService.guardar(idUsuario, idLocalizacion);
+    @PostMapping("/guardarFavorito")
+    public Favorito guardar(@RequestBody Favorito favorito) {
+        return favoritoService.guardar(favorito);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminarFavorito/{id}")
     public void eliminar(@PathVariable Integer id) {
         favoritoService.eliminar(id);
     }

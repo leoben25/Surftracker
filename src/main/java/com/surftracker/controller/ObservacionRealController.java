@@ -10,7 +10,8 @@ import java.util.List;
 
 @RestController
 
-@RequestMapping("/observacionreal")
+@RequestMapping("/api/observacionReal")
+@CrossOrigin(origins = "*")
 
 public class ObservacionRealController {
 
@@ -18,7 +19,7 @@ public class ObservacionRealController {
     private ObservacionRealService service;
 
 
-    @PostMapping
+    @PostMapping("/registrarObservacionReal")
     public ObservacionReal registrar(
             @RequestBody ObservacionReal o){
 

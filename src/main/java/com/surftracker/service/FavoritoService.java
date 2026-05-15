@@ -45,14 +45,20 @@ public class FavoritoService {
         return favoritoRepository.findByLocalizacion_Id(idLocalizacion);
     }
 
-    public Favorito guardar(Integer idUsuario, Integer idLocalizacion) {
-        Usuario usuario = usuarioRepository.findById(idUsuario)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con ID: " + idUsuario));
+    public Favorito guardar(Favorito favorito) {
+        if (favorito.getUsuario() == null || favorito.getUsuario().getIdUsuario() == null) {
+            throw new RuntimeException("El usuario es obligatorio");
+        }
+        if (favorito.getLocalizacion() == null || favorito.getLocalizacion().getId() == null) {
+            throw new RuntimeException("La localización es obligatoria");
+        }
 
-        Localizacion localizacion = localizacionRepository.findById(idLocalizacion)
-                .orElseThrow(() -> new RuntimeException("Localización no encontrada con ID: " + idLocalizacion));
+        Usuario usuario = usuarioRepository.findById(favorito.getUsuario().getIdUsuario())
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con ID: " + favorito.getUsuario().getIdUsuario()));
 
-        Favorito favorito = new Favorito();
+        Localizacion localizacion = localizacionRepository.findById(favorito.getLocalizacion().getId())
+                .orElseThrow(() -> new RuntimeException("Localización no encontrada con ID: " + favorito.getLocalizacion().getId()));
+
         favorito.setUsuario(usuario);
         favorito.setLocalizacion(localizacion);
         favorito.setFechaAgregado(LocalDate.now());

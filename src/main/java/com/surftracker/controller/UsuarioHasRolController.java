@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/usuario-has-rol")
+@CrossOrigin(origins = "*")
 public class UsuarioHasRolController {
 
     @Autowired

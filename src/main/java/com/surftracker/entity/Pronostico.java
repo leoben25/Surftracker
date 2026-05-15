@@ -14,10 +14,9 @@ public class Pronostico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idPronostico;
+    private Integer idPronostico;
 
     private int idLocalizacion;
-    private int idFuente;
     private LocalDateTime fechaGeneracion;
     private LocalDate fechaPronostico;
     private double temperatura;

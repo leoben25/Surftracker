@@ -9,7 +9,8 @@ import java.util.List;
 
 @RestController
 
-@RequestMapping("/consultapronostico")
+@RequestMapping("/api/consultapronosticos")
+@CrossOrigin(origins = "*")
 
 public class ConsultaPronosticoController {
 

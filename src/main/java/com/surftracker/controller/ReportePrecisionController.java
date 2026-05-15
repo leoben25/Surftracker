@@ -10,7 +10,8 @@ import java.time.LocalDate;
 import java.util.HashMap;
 
 @RestController
-@RequestMapping("/Tb1/Prueba/reporte")
+@RequestMapping("/api/reportepresicion")
+@CrossOrigin(origins = "*")
 public class ReportePrecisionController {
 
     @Autowired
@@ -31,4 +32,10 @@ public class ReportePrecisionController {
         LocalDate localDate = LocalDate.parse(fecha);
         return ResponseEntity.ok(reportService.listaPorFechaReporte(localDate));
     }
+
+    @GetMapping("/listaTodos")
+    public ResponseEntity<?> listaReportes() {
+        return ResponseEntity.ok(reportService.listaTodos());
+    }
+
 }

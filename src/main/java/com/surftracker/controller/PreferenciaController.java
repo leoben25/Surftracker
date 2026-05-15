@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
 @RestController
-@RequestMapping("/Tb1/Prueba/preferencia")
+@RequestMapping("/api/preferencias")
+@CrossOrigin(origins = "*")
 public class PreferenciaController {
 
     @Autowired
