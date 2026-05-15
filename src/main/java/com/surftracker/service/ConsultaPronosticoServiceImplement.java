@@ -1,0 +1,58 @@
+package com.surftracker.service;
+
+
+import com.surftracker.entity.ConsultaPronostico;
+import com.surftracker.repository.ConsultaPronosticoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+
+public class ConsultaPronosticoServiceImplement implements ConsultaPronosticoService {
+
+    @Autowired
+    private ConsultaPronosticoRepository repository;
+
+
+    @Override
+    public ConsultaPronostico registrar(
+            ConsultaPronostico consulta){
+
+        return repository.save(consulta);
+
+    }
+
+    @Override
+    public List<ConsultaPronostico> listar(){
+
+        return repository.findAll();
+
+    }
+
+    @Override
+    public ConsultaPronostico buscarPorId(
+            Integer id){
+
+        return repository.findById(id)
+                .orElse(null);
+
+    }
+
+    @Override
+    public ConsultaPronostico actualizar(
+            ConsultaPronostico consulta){
+
+        return repository.save(consulta);
+
+    }
+
+    @Override
+    public void eliminar(Integer id){
+
+        repository.deleteById(id);
+
+    }
+
+}
